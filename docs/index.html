@@ -3,15 +3,15 @@
 <title>Project SOW | FII Work</title>
 <style>
 :root{--navy:#0a2f60;--blue:#1e62ad;--bg:#f4f7fb;--ink:#23354b;--soft:#64758d;--line:#dbe3ed;--shade:#edf4fc}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Arial,Helvetica,sans-serif}header{background:var(--navy);padding:18px max(24px,calc((100vw - 1340px)/2));color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px}header h1{margin:0;font-size:21px}header small{opacity:.8}.tag{border-radius:20px;padding:5px 12px;background:#e8f2ff;color:#124780;font-size:12px;font-weight:700}main{max-width:1340px;margin:24px auto;padding:0 18px}h2{font-size:23px;margin:0 0 5px}h3{font-size:17px;margin:0 0 12px}p{margin:5px 0 12px}.muted{color:var(--soft)}.toolbar{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.btn{cursor:pointer;border:1px solid #c5d5e7;background:#fff;border-radius:8px;color:var(--navy);padding:10px 13px;font:600 13px Arial}.btn:hover{background:#edf4fd}.btn.primary{background:var(--blue);color:white;border-color:var(--blue)}.btn.primary:hover{background:#155391}.btn:disabled{opacity:.45;cursor:not-allowed}.layout{display:grid;grid-template-columns:236px minmax(0,1fr);gap:18px;align-items:start}.box{border:1px solid var(--line);background:#fff;border-radius:12px;padding:22px;box-shadow:0 4px 16px #22344708}.menu button{display:block;background:transparent;border:0;border-radius:8px;width:100%;padding:11px;text-align:left;color:var(--ink);cursor:pointer;margin:3px 0;font-size:14px}.menu button.active{background:var(--shade);color:var(--navy);font-weight:700}.menu small{display:block;padding:12px;color:var(--soft)}.intro{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse}th,td{border:1px solid var(--line);text-align:left;padding:11px 12px}th{background:#f0f5fb;font-size:12px;color:#425b79}td{font-size:13px}td input{min-width:125px}input,select,textarea{background:white;border:1px solid #c7d4e3;border-radius:7px;width:100%;padding:10px 11px;font:14px Arial;color:var(--ink)}textarea{resize:vertical;min-height:100px}textarea.large{min-height:142px}.field{margin:14px 0}.field label{display:block;margin-bottom:6px;font-weight:700}.hint{color:var(--soft);font-size:12px;margin-top:4px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}.divider{height:1px;background:var(--line);margin:22px 0}.card{border:1px solid var(--line);border-radius:9px;padding:15px;margin:11px 0}.card h4{font-size:14px;margin:0 0 9px}.notice{border-left:3px solid var(--blue);background:#f1f7fe;padding:10px 12px;border-radius:4px;margin:14px 0}.view{display:none}.view.active{display:block}.status{display:inline-block;padding:5px 12px;background:#eaf1fb;border-radius:24px;font-size:12px;color:#1b4e8b;font-weight:700}.status.submitted{background:#e8f6ed;color:#246d3a}.inline{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.inline input[type=checkbox]{width:auto}.empty{font-size:13px;color:var(--soft);padding:18px 0}.preview{white-space:pre-wrap}.small{font-size:12px}.topgap{margin-top:18px}@media(max-width:770px){.layout,.grid{grid-template-columns:1fr}.box{padding:16px}header{padding:15px 18px}.toolbar{justify-content:flex-start}}@media print{header,.menu,.toolbar,.no-print{display:none!important}body{background:#fff}.layout{display:block}.box{border:0;box-shadow:none}.view{display:block!important;page-break-inside:avoid}main{margin:0;max-width:none}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Arial,Helvetica,sans-serif}header{background:var(--navy);padding:18px max(24px,calc((100vw - 1340px)/2));color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px}header h1{margin:0;font-size:21px}header small{opacity:.8}.tag{border-radius:20px;padding:5px 12px;background:#e8f2ff;color:#124780;font-size:12px;font-weight:700}main{max-width:1340px;margin:24px auto;padding:0 18px}h2{font-size:23px;margin:0 0 5px}h3{font-size:17px;margin:0 0 12px}p{margin:5px 0 12px}.muted{color:var(--soft)}.toolbar{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.btn{cursor:pointer;border:1px solid #c5d5e7;background:#fff;border-radius:8px;color:var(--navy);padding:10px 13px;font:600 13px Arial}.btn:hover{background:#edf4fd}.btn.primary{background:var(--blue);color:white;border-color:var(--blue)}.btn.primary:hover{background:#155391}.btn:disabled,.menu button:disabled{opacity:.45;cursor:not-allowed}.layout{display:grid;grid-template-columns:236px minmax(0,1fr);gap:18px;align-items:start}.box{border:1px solid var(--line);background:#fff;border-radius:12px;padding:22px;box-shadow:0 4px 16px #22344708}.menu button{display:block;background:transparent;border:0;border-radius:8px;width:100%;padding:11px;text-align:left;color:var(--ink);cursor:pointer;margin:3px 0;font-size:14px}.menu button.active{background:var(--shade);color:var(--navy);font-weight:700}.menu small{display:block;padding:12px;color:var(--soft)}.intro{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse}th,td{border:1px solid var(--line);text-align:left;padding:11px 12px}th{background:#f0f5fb;font-size:12px;color:#425b79}td{font-size:13px}td input{min-width:125px}input,select,textarea{background:white;border:1px solid #c7d4e3;border-radius:7px;width:100%;padding:10px 11px;font:14px Arial;color:var(--ink)}textarea{resize:vertical;min-height:100px}textarea.large{min-height:142px}.field{margin:14px 0}.field label{display:block;margin-bottom:6px;font-weight:700}.hint{color:var(--soft);font-size:12px;margin-top:4px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}.divider{height:1px;background:var(--line);margin:22px 0}.card{border:1px solid var(--line);border-radius:9px;padding:15px;margin:11px 0}.card h4{font-size:14px;margin:0 0 9px}.notice{border-left:3px solid var(--blue);background:#f1f7fe;padding:10px 12px;border-radius:4px;margin:14px 0}.view{display:none}.view.active{display:block}.status{display:inline-block;padding:5px 12px;background:#eaf1fb;border-radius:24px;font-size:12px;color:#1b4e8b;font-weight:700}.status.submitted{background:#e8f6ed;color:#246d3a}.actions{display:flex;gap:10px;align-items:center;margin-top:18px}.inline{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.inline input[type=checkbox]{width:auto}.empty{font-size:13px;color:var(--soft);padding:18px 0}.preview{white-space:pre-wrap}.small{font-size:12px}.topgap{margin-top:18px}@media(max-width:770px){.layout,.grid{grid-template-columns:1fr}.box{padding:16px}header{padding:15px 18px}.toolbar{justify-content:flex-start}}@media print{header,.menu,.toolbar,.no-print{display:none!important}body{background:#fff}.layout{display:block}.box{border:0;box-shadow:none}.view{display:block!important;page-break-inside:avoid}main{margin:0;max-width:none}}
 </style></head>
 <body>
 <header><div><h1>FII Work · Project SOW</h1><small>Statement of Work Management Platform</small></div><span class="tag">WORKING DEMO</span></header>
 <main>
 <div class="intro"><div><h2>Project SOW</h2><p class="muted">Create and review a goods, services, or construction scope of work.</p></div><div class="toolbar">
-<button class="btn" onclick="exportPDF()">Export PDF</button><button class="btn" onclick="exportWord()">Export Word</button><button class="btn" onclick="saveDraft()">Save Draft</button><button class="btn primary" onclick="submitSOW()">Submit</button>
+<button class="btn" onclick="exportPDF()">Export PDF</button><button class="btn" onclick="exportWord()">Export Word</button><button class="btn" onclick="saveDraft()">Save Draft</button><button class="btn primary" onclick="showPage('deliverables')">Submit</button>
 </div></div>
-<section class="box" style="margin-bottom:18px">
+<section class="box" id="historyPanel" style="margin-bottom:18px;display:none">
 <div class="intro"><h3 style="margin:0">Release History</h3><span class="status" id="statusBadge">Draft</span></div>
 <div class="tablewrap"><table><thead><tr><th style="width:18%">Version</th><th>Release People</th><th style="width:25%">Date</th></tr></thead><tbody id="releaseRows"></tbody></table></div>
 <p class="hint">Release history is generated upon Submit. A new submitted revision is added to the table.</p>
@@ -20,9 +20,10 @@
 <aside class="box menu"><h3>Project SOW</h3>
 <button class="active" data-page="project" onclick="showPage('project')">01 · Project SOW</button>
 <button data-page="scope" onclick="showPage('scope')">02 · Scope of Work</button>
-<button data-page="deliverables" onclick="showPage('deliverables')">03 · Deliverables</button>
-<button data-page="acceptance" onclick="showPage('acceptance')">04 · Acceptance Criteria</button>
-<button data-page="review" onclick="showPage('review')">05 · Review & Submit</button>
+<button data-page="deliverables" onclick="showPage('deliverables')">03a · Deliverables</button>
+<button data-page="acceptance" onclick="showPage('acceptance')">03b · Acceptance Criteria</button>
+<button data-page="review" onclick="showPage('review')">04 · Manager & Procurement Review</button>
+<button data-page="rfq" onclick="showPage('rfq')">05 · Vendor RFQ</button>
 <small>Demo: draft data is stored in this browser only. No shared database, approvals, or user accounts are connected.</small></aside>
 <section class="box">
 <div id="project" class="view active">
@@ -41,30 +42,45 @@
 <div class="field"><label>Scope Exclusions</label><textarea data-key="exclusions" placeholder="Identify what is explicitly out of scope"></textarea></div>
 <div class="field"><label>Schedule / Key Milestones</label><textarea data-key="milestones" placeholder="Enter expected dates and milestones"></textarea></div>
 <div class="field"><label>Dependencies & Constraints</label><textarea data-key="constraints" placeholder="Access, permits, interfaces, or other constraints"></textarea></div></div>
-<div id="deliverables" class="view"><h3>Deliverables</h3><p class="muted" id="deliverIntro">Select a SOW Category on the Project SOW tab to display the appropriate form.</p><div id="deliverFields"></div></div>
-<div id="acceptance" class="view"><h3>Acceptance Criteria</h3><p class="muted" id="acceptIntro">Select a SOW Category on the Project SOW tab to display the appropriate form.</p><div id="acceptFields"></div></div>
-<div id="review" class="view"><h3>Review & Submit</h3><p class="muted">Review key information before submitting your SOW version.</p>
+<div id="deliverables" class="view"><h3>Deliverables</h3><p class="muted" id="deliverIntro">Select a SOW Category on the Project SOW tab to display the appropriate form.</p><div id="deliverFields"></div><div class="actions"><button class="btn primary" onclick="submitSection('deliverables')">Submit Deliverables</button><span class="status" id="deliverStatus">Not Submitted</span></div></div>
+<div id="acceptance" class="view"><h3>Acceptance Criteria</h3><p class="muted" id="acceptIntro">Select a SOW Category on the Project SOW tab to display the appropriate form.</p><div id="acceptFields"></div><div class="actions"><button class="btn primary" onclick="submitSection('acceptance')">Submit Acceptance Criteria</button><span class="status" id="acceptStatus">Not Submitted</span></div></div>
+<div id="review" class="view"><h3>04 · Manager & Procurement Review</h3>
+<p class="muted">Available after both Deliverables and Acceptance Criteria have been submitted. Reviews are simulated and stored locally.</p>
+<div class="notice" id="reviewGate">Submit both preceding sections to unlock reviews.</div>
+<div id="reviewControls" style="display:none">
+<div class="card"><h4>Manager Review</h4><div class="grid"><div class="field"><label>Manager Name</label><input data-key="managerName" placeholder="Manager reviewer"></div><div class="field"><label>Manager Decision</label><select data-key="managerDecision" onchange="reviewChanged()"><option value="Pending">Pending</option><option value="Approved">Approved</option><option value="Changes Requested">Changes Requested</option></select></div></div><div class="field"><label>Manager Comments</label><textarea data-key="managerComments" placeholder="Review notes"></textarea></div></div>
+<div class="card"><h4>Procurement Review</h4><div class="grid"><div class="field"><label>Procurement Reviewer</label><input data-key="procurementName" placeholder="Procurement reviewer"></div><div class="field"><label>Procurement Decision</label><select data-key="procurementDecision" onchange="reviewChanged()"><option value="Pending">Pending</option><option value="Approved">Approved</option><option value="Changes Requested">Changes Requested</option></select></div></div><div class="field"><label>Procurement Comments</label><textarea data-key="procurementComments" placeholder="Procurement comments"></textarea></div></div>
 <div class="field"><label>Release People *</label><input id="releasePerson" placeholder="Person responsible for releasing the SOW"></div>
-<div class="field"><label>Submission Notes</label><textarea data-key="notes" placeholder="Add review notes or revision rationale"></textarea></div>
-<div class="notice">Submit is a demo action. It records a local version history entry but does not notify Procurement or perform a real approval.</div>
-<h3 class="topgap">Submission Readiness</h3><div id="readiness" class="preview muted"></div>
-<button class="btn primary topgap" onclick="submitSOW()">Submit SOW</button></div>
+<div class="field"><label>Review / Revision Notes</label><textarea data-key="notes" placeholder="Add notes or revision rationale"></textarea></div>
+<div class="notice">Once both reviewers approve, Submit Approved SOW releases a version and unlocks Vendor RFQ. Demo actions do not notify anyone.</div>
+<div id="readiness" class="muted"></div><button class="btn primary topgap" onclick="submitSOW()">Submit Approved SOW</button></div></div>
+<div id="rfq" class="view"><h3>05 · Vendor RFQ</h3><p class="muted">Procurement manages vendor invitations, RFQ questions and proposal follow-up.</p>
+<div class="notice" id="rfqGate">Available after Manager and Procurement approvals and final SOW release.</div>
+<div id="rfqControls" style="display:none">
+<div class="grid"><div class="field"><label>Vendor / Company</label><input id="rfqVendor" placeholder="Vendor name"></div><div class="field"><label>RFQ Due Date</label><input type="date" data-key="rfqDueDate"></div></div>
+<div class="field"><label>Vendor Question / RFQ Notes</label><textarea id="rfqQuestion" placeholder="Enter vendor question or RFQ follow-up"></textarea></div>
+<button class="btn primary" onclick="addRFQ()">Add Vendor Question</button><h3 class="topgap">RFQ Log</h3><div id="rfqList"></div>
+<div class="hint">Requesting team should respond to technical clarifications; Procurement coordinates vendor communications. This is a local demo.</div></div></div>
 </section></div><p class="muted small topgap">Prototype only. Avoid entering confidential, personal, or commercial information into this publicly hosted demo.</p></main>
 <script>
-const STORAGE='fii-project-sow-v3';let history=[], answers={goods:{},services:{},construction:{}},submitted=false;
+const STORAGE='fii-project-sow-v4';let history=[], answers={goods:{},services:{},construction:{}},submitted=false, sections={deliverables:false,acceptance:false}, rfqs=[];
 const schemas={
 goods:{deliverIntro:'Goods — product quantities, specifications, documentation, and delivery requirements.',acceptIntro:'Goods — verify products against specifications and receiving requirements.',deliver:[
 ['description','Item / Equipment Description','List each item, model, and applicable specification'],
 ['quantity','Quantity & Unit of Measure','Required quantity and unit'],
 ['datasheets','Technical Datasheets / Certifications','Required product data, certifications, manuals, warranty'],
 ['delivery','Delivery Location & Packaging','Delivery site, packing, labeling, and logistics'],
-['spares','Spare Parts / Accessories','Required accessories, spare parts, or consumables']
+['spares','Spare Parts / Accessories','Required accessories, spare parts, or consumables'],
+['leadTime','Delivery Lead Time / Schedule','Required lead time, delivery milestones, and delay notification'],
+['remediation','Defect Resolution & Corrective Actions','How should shortages, defects or nonconformities be corrected and by when?']
 ],accept:[
 ['specs','Specification Compliance','How will product specifications be verified?'],
 ['inspection','Incoming Inspection & Testing','What receiving inspection and test results are required?'],
 ['quantity','Quantity / Damage Check','How will quantities and shipping damage be checked?'],
 ['documents','Documentation & Warranty','What documentation and warranty must be accepted?'],
-['signoff','Receiving Acceptance & Sign-off','Who confirms acceptance and how?']
+['signoff','Receiving Acceptance & Sign-off','Who confirms acceptance and how?'],
+['timeliness','On-Time Delivery & Delay Handling','What delivery time window and delay remedies are acceptable?'],
+['corrective','Nonconformance Resolution / Retest','What corrective action, rework, replacement, and re-inspection are required?']
 ]},
 services:{deliverIntro:'Services — activities, reports, service levels, and handover documentation.',acceptIntro:'Services — verify quality, outcomes, and SLA or milestone completion.',deliver:[
 ['services','Service Activities & Outputs','What services and outputs must be provided?'],
@@ -84,22 +100,26 @@ construction:{deliverIntro:'Construction — drawings, permits, installation doc
 ['permits','Permits & Inspections','Permits, inspection reports, and agency closeout records'],
 ['materials','Material / Equipment Submittals','Product approvals, certifications and material records'],
 ['tests','Testing & Commissioning','Test reports, commissioning records, punch list'],
-['closeout','Closeout Package','Warranty, O&M manuals, photos and turnover records']
+['closeout','Closeout Package','Warranty, O&M manuals, photos and turnover records'],
+['schedule','Construction Schedule & Milestone Deadlines','Required completion dates, delay reporting, and recovery schedule'],
+['remediation','Deficiency Correction Plan','Deadline and process for correcting workmanship or quality issues']
 ],accept:[
 ['inspection','Field Inspection / Installation Quality','What installation inspections must pass?'],
 ['compliance','Code, Permit & Safety Compliance','Which code, permit, safety and labor requirements apply?'],
 ['tests','Testing & Commissioning Results','What tests must pass and what evidence is required?'],
 ['punch','Punch List Closure','How are defects tracked and resolved?'],
-['signoff','Final Owner Acceptance','Who signs the final acceptance and required documentation?']
+['signoff','Final Owner Acceptance','Who signs the final acceptance and required documentation?'],
+['timeliness','Milestone / Completion Timeliness','How is on-time substantial and final completion verified?'],
+['correction','Punch List Corrective Actions & Reinspection','How quickly must deficiencies be fixed, retested and closed?']
 ]}};
 function el(id){return document.getElementById(id)}
 function escapeHTML(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]))}
 function textVal(k){let e=document.querySelector('[data-key="'+k+'"]');return e?e.value:''}
-function formData(){const fields={};document.querySelectorAll('[data-key]').forEach(e=>fields[e.dataset.key]=e.value);return{fields,answers,history,submitted,releasePerson:el('releasePerson').value}}
+function formData(){captureDynamic();const fields={};document.querySelectorAll('[data-key]').forEach(e=>fields[e.dataset.key]=e.value);return{fields,answers,history,submitted,sections,rfqs,releasePerson:el('releasePerson').value}}
 function store(){localStorage.setItem(STORAGE,JSON.stringify(formData()))}
 function saveDraft(){submitted=false;store();refreshStatus();alert('Draft saved in this browser.')}
-function showPage(p){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===p));document.querySelectorAll('.menu button[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===p));if(p==='review')readiness()}
-function changeCategory(c){renderDynamic(c);store()}
+function showPage(p){if(p==='review' && !(sections.deliverables&&sections.acceptance)){alert('Submit both Deliverables and Acceptance Criteria first.');return}if(p==='rfq'&&!submitted){alert('Both Manager and Procurement must approve, then release the SOW before RFQ.');return}document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===p));document.querySelectorAll('.menu button[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===p));el('historyPanel').style.display=p==='project'?'block':'none';el('reviewControls').style.display=sections.deliverables&&sections.acceptance?'block':'none';el('rfqControls').style.display=submitted?'block':'none';if(p==='review')readiness();if(p==='rfq')renderRFQ()}
+function changeCategory(c){sections={deliverables:false,acceptance:false};submitted=false;renderDynamic(c);renderGates();store()}
 function renderDynamic(c){
 let s=schemas[c];el('deliverIntro').textContent=s?s.deliverIntro:'Select a SOW Category on the Project SOW tab to display the appropriate form.';
 el('acceptIntro').textContent=s?s.acceptIntro:'Select a SOW Category on the Project SOW tab to display the appropriate form.';
@@ -107,13 +127,18 @@ for(const [section,root,fields] of [['deliver','deliverFields',s?.deliver],['acc
 el(root).innerHTML=fields?fields.map(([key,label,hint])=>'<div class="field"><label>'+escapeHTML(label)+'</label><textarea data-dynamic="'+section+'" data-id="'+escapeHTML(key)+'" placeholder="'+escapeHTML(hint)+'">'+escapeHTML(answers[c]?.[section+'_'+key]||'')+'</textarea></div>').join(''):'<div class="empty">Choose Goods, Services or Construction to create category-specific questions.</div>';
 }}
 function captureDynamic(){const c=textVal('category');if(!c)return;answers[c]??={};document.querySelectorAll('[data-dynamic]').forEach(e=>answers[c][e.dataset.dynamic+'_'+e.dataset.id]=e.value)}
-document.addEventListener('input',e=>{if(e.target.matches('[data-dynamic]'))captureDynamic(); if(e.target.matches('[data-key],#releasePerson,[data-dynamic]')){submitted=false;refreshStatus()}});
+document.addEventListener('input',e=>{if(e.target.matches('[data-dynamic]')){captureDynamic();sections[e.target.dataset.dynamic==='deliver'?'deliverables':'acceptance']=false;}if(e.target.matches('[data-key],#releasePerson,[data-dynamic]')){submitted=false;renderGates();refreshStatus()}});
 function renderHistory(){el('releaseRows').innerHTML=history.length?history.map(r=>'<tr><td>'+escapeHTML(r.version)+'</td><td>'+escapeHTML(r.person)+'</td><td>'+escapeHTML(r.date)+'</td></tr>').join(''):'<tr><td colspan="3" class="muted">No released versions yet.</td></tr>'}
-function refreshStatus(){el('statusBadge').textContent=submitted?'Submitted':'Draft';el('statusBadge').className='status'+(submitted?' submitted':'')}
+function refreshStatus(){el('statusBadge').textContent=submitted?'Released':'Draft';el('statusBadge').className='status'+(submitted?' submitted':'')}
 function missing(){const required=[['projectName','Project Name'],['department','Requesting Department'],['owner','SOW Owner'],['category','SOW Category'],['scope','Work Description']];return required.filter(([k])=>!textVal(k).trim()).map(([,label])=>label).concat(!el('releasePerson').value.trim()?['Release People']:[])}
-function readiness(){let m=missing();el('readiness').textContent=m.length?'Required before Submit: '+m.join(', '):'All required fields completed. Ready to submit this version.'}
-function submitSOW(){captureDynamic();let m=missing();if(m.length){showPage('review');readiness();alert('Please complete: '+m.join(', '));return}
-history.push({version:'R'+(history.length+1),person:el('releasePerson').value.trim(),date:new Date().toLocaleDateString('en-US',{year:'numeric',month:'2-digit',day:'2-digit'})});submitted=true;store();renderHistory();refreshStatus();showPage('review');alert('Submitted locally as '+history[history.length-1].version+'. This demo does not send an approval request.')}
+function readiness(){let m=missing();if(textVal('managerDecision')!=='Approved')m.push('Manager Approval');if(textVal('procurementDecision')!=='Approved')m.push('Procurement Approval');el('readiness').textContent=m.length?'Required before release: '+m.join(', '):'Both reviewers approved. Ready to release.'}
+function renderGates(){for(const [k,id] of [['deliverables','deliverStatus'],['acceptance','acceptStatus']]){el(id).textContent=sections[k]?'Submitted':'Not Submitted';el(id).className='status'+(sections[k]?' submitted':'')}el('reviewGate').textContent=sections.deliverables&&sections.acceptance?'Both sections submitted. Manager and Procurement review is unlocked.':'Submit Deliverables and Acceptance Criteria to unlock reviews.';el('reviewControls').style.display=sections.deliverables&&sections.acceptance?'block':'none';el('rfqControls').style.display=submitted?'block':'none';document.querySelector('[data-page="review"]').disabled=!(sections.deliverables&&sections.acceptance);document.querySelector('[data-page="rfq"]').disabled=!submitted;}
+function submitSection(section){captureDynamic();const category=textVal('category');if(!category){alert('Choose a SOW Category on the first page.');showPage('project');return}const prefix=section==='deliverables'?'deliver':'accept';const fields=schemas[category][prefix];const answered=fields.some(([k])=>(answers[category]?.[prefix+'_'+k]||'').trim());if(!answered){alert('Complete at least one relevant field before submitting.');return}sections[section]=true;submitted=false;store();renderGates();refreshStatus();if(sections.deliverables&&sections.acceptance){showPage('review');alert('Both sections submitted. Manager and Procurement review is now available.')}else{showPage(section==='deliverables'?'acceptance':'deliverables');alert(section+' submitted. Please submit the other section.');}}
+function reviewChanged(){submitted=false;renderGates();store();readiness()}
+function submitSOW(){captureDynamic();if(!(sections.deliverables&&sections.acceptance)){alert('Submit Deliverables and Acceptance Criteria first.');showPage('deliverables');return}let m=missing();if(textVal('managerDecision')!=='Approved')m.push('Manager Approval');if(textVal('procurementDecision')!=='Approved')m.push('Procurement Approval');if(m.length){showPage('review');readiness();alert('Please complete: '+m.join(', '));return}
+history.push({version:'R'+(history.length+1),person:el('releasePerson').value.trim(),date:new Date().toLocaleDateString('en-US',{year:'numeric',month:'2-digit',day:'2-digit'})});submitted=true;store();renderHistory();refreshStatus();renderGates();showPage('rfq');alert('SOW locally released as '+history[history.length-1].version+'. Vendor RFQ is now available.');}
+function addRFQ(){const vendor=el('rfqVendor').value.trim(),question=el('rfqQuestion').value.trim();if(!vendor||!question)return alert('Enter a vendor and question.');rfqs.push({vendor,question,date:new Date().toLocaleDateString()});el('rfqQuestion').value='';store();renderRFQ();}
+function renderRFQ(){el('rfqList').innerHTML=rfqs.length?rfqs.map(x=>'<div class="card"><strong>'+escapeHTML(x.vendor)+'</strong> · '+escapeHTML(x.date)+'<p>'+escapeHTML(x.question)+'</p></div>').join(''):'<p class="empty">No RFQ items yet.</p>';}
 function niceName(k){const names={projectName:'Project Name',projectId:'Project ID',department:'Requesting Department',owner:'SOW Owner',location:'Project Location',completionDate:'Target Completion Date',category:'SOW Category',background:'Background',objective:'Project Objective',scope:'Scope of Work',exclusions:'Scope Exclusions',milestones:'Schedule / Key Milestones',constraints:'Dependencies & Constraints',notes:'Submission Notes'};return names[k]||k}
 function docHTML(){captureDynamic();const d=formData(),c=d.fields.category,s=schemas[c];let rows=history.length?history.map(r=>'<tr><td>'+escapeHTML(r.version)+'</td><td>'+escapeHTML(r.person)+'</td><td>'+escapeHTML(r.date)+'</td></tr>').join(''):'<tr><td colspan="3">Draft — no released version</td></tr>';
 let out='<h1>Project Statement of Work</h1><h2>Release History</h2><table border="1" cellpadding="7" cellspacing="0" width="100%"><tr><th>Version</th><th>Release People</th><th>Date</th></tr>'+rows+'</table>';
@@ -125,6 +150,6 @@ function filename(ext){return(textVal('projectName').trim()||'Project_SOW').repl
 function download(name,content,type){let url=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)}
 function exportWord(){download(filename('doc'),docHTML(),'application/msword');}
 function exportPDF(){let w=window.open('','_blank');if(!w){alert('Please allow pop-ups to export a PDF.');return}w.document.open();w.document.write(docHTML());w.document.close();w.focus();setTimeout(()=>w.print(),500)}
-function load(){try{let d=JSON.parse(localStorage.getItem(STORAGE));if(d){history=d.history||[];answers=d.answers||answers;submitted=!!d.submitted;document.querySelectorAll('[data-key]').forEach(e=>{if(d.fields?.[e.dataset.key]!==undefined)e.value=d.fields[e.dataset.key]});el('releasePerson').value=d.releasePerson||''}}catch(e){}renderDynamic(textVal('category'));renderHistory();refreshStatus()}
+function load(){try{let d=JSON.parse(localStorage.getItem(STORAGE));if(d){history=d.history||[];answers=d.answers||answers;sections=d.sections||sections;rfqs=d.rfqs||[];submitted=!!d.submitted;document.querySelectorAll('[data-key]').forEach(e=>{if(d.fields?.[e.dataset.key]!==undefined)e.value=d.fields[e.dataset.key]});el('releasePerson').value=d.releasePerson||''}}catch(e){}renderDynamic(textVal('category'));renderHistory();refreshStatus();renderGates();renderRFQ();el('historyPanel').style.display='block'}
 load();
 </script></body></html>
