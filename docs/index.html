@@ -1,32 +1,130 @@
-<!DOCTYPE html>
-<!-- Redeploy GitHub Pages: sanitized demo -->
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SOW Studio · FII Work Demo</title>
-<style>:root{--navy:#0b2d59;--blue:#2066b5;--pale:#edf5ff;--bg:#f5f7fb;--line:#dce4ee;--ink:#203048;--muted:#687b94}*{box-sizing:border-box}body{margin:0;font:14px/1.55 Arial,sans-serif;color:var(--ink);background:var(--bg)}header{background:var(--navy);color:white;padding:19px 34px;display:flex;justify-content:space-between;align-items:center}header h1{font-size:21px;margin:0}header small{opacity:.76}main{max-width:1240px;margin:26px auto;padding:0 20px}.layout{display:grid;grid-template-columns:235px 1fr;gap:20px}.panel{border:1px solid var(--line);background:white;border-radius:13px;padding:23px;box-shadow:0 4px 15px #23374d08}.nav button{display:block;width:100%;text-align:left;background:none;border:0;padding:12px;border-radius:8px;color:var(--ink);font-size:14px;cursor:pointer;margin-bottom:5px}.nav button.active{background:var(--pale);font-weight:bold;color:var(--navy)}.muted{color:var(--muted)}h2{font-size:22px;margin:0 0 6px}h3{font-size:16px;margin:24px 0 9px}.tag{font-size:12px;background:#eaf2ff;padding:5px 10px;border-radius:15px;color:#225a99;display:inline-block}.top{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:20px}.btn{border:1px solid #c7d6e8;border-radius:8px;padding:9px 14px;background:white;cursor:pointer;color:var(--navy);font-weight:bold}.primary{background:var(--blue);color:white;border-color:var(--blue)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{margin:14px 0}.field label{display:block;font-weight:bold;margin-bottom:6px}input,textarea,select{width:100%;padding:11px;border:1px solid #cad6e4;border-radius:8px;font:inherit;background:white;color:var(--ink)}textarea{min-height:108px;resize:vertical}textarea.long{min-height:175px}.hint{font-size:12px;color:var(--muted);margin-top:5px}.steps{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.steps span{padding:9px 13px;border:1px solid var(--line);border-radius:25px;background:white;font-size:12px}.steps .on{background:var(--pale);border-color:#88b6e8;color:var(--navy);font-weight:bold}.item{padding:14px 0;border-bottom:1px solid var(--line)}.item:last-child{border:0}.item b{display:block;margin-bottom:4px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:19px}.hide{display:none}.notice{padding:11px 14px;background:#f0f7ff;border-left:3px solid var(--blue);border-radius:5px;margin:12px 0}.pill{display:inline-block;padding:3px 8px;border-radius:30px;background:#f0f4fa;font-size:12px}.foot{font-size:12px;color:var(--muted);margin-top:28px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{border:1px solid var(--line);padding:16px;border-radius:10px}.stat strong{display:block;font-size:23px;color:var(--navy)}@media(max-width:760px){.layout,.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}header{padding:15px}main{padding:0 12px}.top{align-items:flex-start;flex-direction:column}}</style></head>
-<body><header><div><h1>SOW Studio</h1><small>FII Work · Statement of Work management</small></div><span class="tag">DRAFT WORKSPACE</span></header>
-<main><div class="top"><div><h2 id="heading">Project Workspace</h2><p class="muted" style="margin:0">Blank SOW workspace</p></div><div><button class="btn" onclick="exportData()">Export JSON</button> <button class="btn primary" onclick="save()">Save Draft</button></div></div>
-<div class="layout"><aside class="panel nav"><button class="active" onclick="page('overview',this)">01 · Project overview</button><button onclick="page('scope',this)">02 · Scope of work</button><button onclick="page('deliverables',this)">03 · Deliverables</button><button onclick="page('acceptance',this)">04 · Acceptance criteria</button><button onclick="page('clarifications',this)">05 · Vendor Q&amp;A</button><button onclick="page('approval',this)">06 · Review &amp; approval</button><button onclick="page('history',this)">07 · Revision history</button><div class="foot">Prototype only. Data is stored in this browser, not in GitHub or a shared database.</div></aside>
-<section class="panel"><div id="overview" class="view"><h2 style="margin-top:14px">Project overview</h2><div class="grid"><div class="field"><label>Project title</label><input data-key="title" value=""></div><div class="field"><label>Requesting department</label><input data-key="department" value=""></div></div><div class="field"><label>Background</label><textarea data-key="background"></textarea></div><div class="field"><label>Objective</label><textarea data-key="objective"></textarea></div><div class="notice">Start with a blank SOW. Enter your project requirements using the fields below.</div></div>
-<div id="scope" class="view hide"><h2>Scope of work</h2><p class="muted">Requesting team owns the technical requirements.</p><div class="field"><label>Contractor responsibilities</label><textarea class="long" data-key="scope"></textarea></div><div class="field"><label>Assumptions / exclusions</label><textarea data-key="exclusions" placeholder="Document any exclusions or access limitations."></textarea></div></div>
-<div id="deliverables" class="view hide"><h2>Deliverables</h2><p class="muted">List what vendors must submit for acceptance.</p><div class="field"><label>Required deliverables</label><textarea class="long" data-key="deliverables"></textarea></div><div class="field"><label>Document formats</label><input data-key="formats" value=""></div></div>
-<div id="acceptance" class="view hide"><h2>Acceptance criteria</h2><div class="field"><label>Completion requirements</label><textarea class="long" data-key="acceptance"></textarea></div><label><input type="checkbox" data-key="fieldVerified" style="width:auto"> Field verification completed</label><p class="hint">A real production platform would require evidence upload and owner sign-off.</p></div>
-<div id="clarifications" class="view hide"><h2>Vendor clarification log</h2><p class="muted">Procurement collects vendor questions; requesting team owns technical responses.</p><div class="grid"><div class="field"><label>Vendor name</label><input id="vendor" placeholder="Vendor A"></div><div class="field"><label>Question category</label><select id="category"><option>Technical scope</option><option>Deliverable</option><option>Schedule</option><option>Commercial</option></select></div></div><div class="field"><label>Vendor question</label><textarea id="question" placeholder="Enter a vendor question..."></textarea></div><button class="btn primary" onclick="addQuestion()">Add question</button><h3>Open questions</h3><div id="qaList" class="muted">No questions yet.</div></div>
-<div id="approval" class="view hide"><h2>Review &amp; approval</h2><div class="steps"><span class="on">Draft</span><span>Internal review</span><span>Approved</span><span>Issued to vendors</span></div><div class="grid"><div class="field"><label>Technical owner</label><input data-key="technicalOwner" placeholder="Requesting team owner"></div><div class="field"><label>Procurement contact</label><input data-key="procurement" placeholder="Purchasing owner"></div></div><div class="field"><label>Current status</label><select data-key="status" id="status"><option>Draft</option><option>In Review</option><option>Approved</option><option>Issued to Vendors</option></select></div><div class="field"><label>Review comments</label><textarea data-key="comments" placeholder="Capture approvals or reasons for revision..."></textarea></div><div class="notice">Approval changes here are simulated. This is not an authenticated approval or audit trail.</div></div>
-<div id="history" class="view hide"><h2>Revision history</h2><p class="muted">Record significant SOW changes and release dates.</p><div class="grid"><div class="field"><label>Revision note</label><input id="revNote" placeholder="Description of change"></div><div class="field"><label>Revised by</label><input id="revisedBy" placeholder="Team or owner"></div></div><button class="btn primary" onclick="revision()">Add revision</button><div id="revisionList" style="margin-top:15px"></div></div>
-<div class="actions"><button class="btn" onclick="downloadText()">Download SOW text</button><button class="btn" onclick="reset()">Reset demo</button></div></section></div><p class="foot">Demo uses localStorage. Not for production, procurement approval, or storing sensitive information. Hosting on GitHub Pages may make the rendered site publicly accessible.</p></main>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project SOW | FII Work</title>
+<style>
+:root{--navy:#0a2f60;--blue:#1e62ad;--bg:#f4f7fb;--ink:#23354b;--soft:#64758d;--line:#dbe3ed;--shade:#edf4fc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Arial,Helvetica,sans-serif}header{background:var(--navy);padding:18px max(24px,calc((100vw - 1340px)/2));color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px}header h1{margin:0;font-size:21px}header small{opacity:.8}.tag{border-radius:20px;padding:5px 12px;background:#e8f2ff;color:#124780;font-size:12px;font-weight:700}main{max-width:1340px;margin:24px auto;padding:0 18px}h2{font-size:23px;margin:0 0 5px}h3{font-size:17px;margin:0 0 12px}p{margin:5px 0 12px}.muted{color:var(--soft)}.toolbar{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.btn{cursor:pointer;border:1px solid #c5d5e7;background:#fff;border-radius:8px;color:var(--navy);padding:10px 13px;font:600 13px Arial}.btn:hover{background:#edf4fd}.btn.primary{background:var(--blue);color:white;border-color:var(--blue)}.btn.primary:hover{background:#155391}.btn:disabled{opacity:.45;cursor:not-allowed}.layout{display:grid;grid-template-columns:236px minmax(0,1fr);gap:18px;align-items:start}.box{border:1px solid var(--line);background:#fff;border-radius:12px;padding:22px;box-shadow:0 4px 16px #22344708}.menu button{display:block;background:transparent;border:0;border-radius:8px;width:100%;padding:11px;text-align:left;color:var(--ink);cursor:pointer;margin:3px 0;font-size:14px}.menu button.active{background:var(--shade);color:var(--navy);font-weight:700}.menu small{display:block;padding:12px;color:var(--soft)}.intro{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse}th,td{border:1px solid var(--line);text-align:left;padding:11px 12px}th{background:#f0f5fb;font-size:12px;color:#425b79}td{font-size:13px}td input{min-width:125px}input,select,textarea{background:white;border:1px solid #c7d4e3;border-radius:7px;width:100%;padding:10px 11px;font:14px Arial;color:var(--ink)}textarea{resize:vertical;min-height:100px}textarea.large{min-height:142px}.field{margin:14px 0}.field label{display:block;margin-bottom:6px;font-weight:700}.hint{color:var(--soft);font-size:12px;margin-top:4px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}.divider{height:1px;background:var(--line);margin:22px 0}.card{border:1px solid var(--line);border-radius:9px;padding:15px;margin:11px 0}.card h4{font-size:14px;margin:0 0 9px}.notice{border-left:3px solid var(--blue);background:#f1f7fe;padding:10px 12px;border-radius:4px;margin:14px 0}.view{display:none}.view.active{display:block}.status{display:inline-block;padding:5px 12px;background:#eaf1fb;border-radius:24px;font-size:12px;color:#1b4e8b;font-weight:700}.status.submitted{background:#e8f6ed;color:#246d3a}.inline{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.inline input[type=checkbox]{width:auto}.empty{font-size:13px;color:var(--soft);padding:18px 0}.preview{white-space:pre-wrap}.small{font-size:12px}.topgap{margin-top:18px}@media(max-width:770px){.layout,.grid{grid-template-columns:1fr}.box{padding:16px}header{padding:15px 18px}.toolbar{justify-content:flex-start}}@media print{header,.menu,.toolbar,.no-print{display:none!important}body{background:#fff}.layout{display:block}.box{border:0;box-shadow:none}.view{display:block!important;page-break-inside:avoid}main{margin:0;max-width:none}}
+</style></head>
+<body>
+<header><div><h1>FII Work · Project SOW</h1><small>Statement of Work Management Platform</small></div><span class="tag">WORKING DEMO</span></header>
+<main>
+<div class="intro"><div><h2>Project SOW</h2><p class="muted">Create and review a goods, services, or construction scope of work.</p></div><div class="toolbar">
+<button class="btn" onclick="exportPDF()">Export PDF</button><button class="btn" onclick="exportWord()">Export Word</button><button class="btn" onclick="saveDraft()">Save Draft</button><button class="btn primary" onclick="submitSOW()">Submit</button>
+</div></div>
+<section class="box" style="margin-bottom:18px">
+<div class="intro"><h3 style="margin:0">Release History</h3><span class="status" id="statusBadge">Draft</span></div>
+<div class="tablewrap"><table><thead><tr><th style="width:18%">Version</th><th>Release People</th><th style="width:25%">Date</th></tr></thead><tbody id="releaseRows"></tbody></table></div>
+<p class="hint">Release history is generated upon Submit. A new submitted revision is added to the table.</p>
+</section>
+<div class="layout">
+<aside class="box menu"><h3>Project SOW</h3>
+<button class="active" data-page="project" onclick="showPage('project')">01 · Project SOW</button>
+<button data-page="scope" onclick="showPage('scope')">02 · Scope of Work</button>
+<button data-page="deliverables" onclick="showPage('deliverables')">03 · Deliverables</button>
+<button data-page="acceptance" onclick="showPage('acceptance')">04 · Acceptance Criteria</button>
+<button data-page="review" onclick="showPage('review')">05 · Review & Submit</button>
+<small>Demo: draft data is stored in this browser only. No shared database, approvals, or user accounts are connected.</small></aside>
+<section class="box">
+<div id="project" class="view active">
+<h3>Project Information</h3><div class="grid">
+<div class="field"><label>Project Name *</label><input data-key="projectName" placeholder="Enter project name"></div>
+<div class="field"><label>Project ID</label><input data-key="projectId" placeholder="Project number"></div>
+<div class="field"><label>Requesting Department *</label><input data-key="department" placeholder="Department / team"></div>
+<div class="field"><label>SOW Owner *</label><input data-key="owner" placeholder="Name of requester"></div>
+<div class="field"><label>Project Location</label><input data-key="location" placeholder="Site / region"></div>
+<div class="field"><label>Target Completion Date</label><input data-key="completionDate" type="date"></div></div>
+<div class="field"><label>SOW Category *</label><select id="category" data-key="category" onchange="changeCategory(this.value)"><option value="">Select category</option><option value="goods">Goods</option><option value="services">Services</option><option value="construction">Construction</option></select><div class="hint">This selection determines the Deliverables and Acceptance Criteria forms.</div></div>
+<div class="field"><label>Background</label><textarea data-key="background" placeholder="Explain the business need and project context"></textarea></div>
+<div class="field"><label>Project Objective</label><textarea data-key="objective" placeholder="Describe expected outcomes"></textarea></div></div>
+<div id="scope" class="view"><h3>Scope of Work</h3><p class="muted">The requesting team defines technical and performance requirements.</p>
+<div class="field"><label>Work Description *</label><textarea class="large" data-key="scope" placeholder="Describe the required scope, activities, specifications, or performance expectations"></textarea></div>
+<div class="field"><label>Scope Exclusions</label><textarea data-key="exclusions" placeholder="Identify what is explicitly out of scope"></textarea></div>
+<div class="field"><label>Schedule / Key Milestones</label><textarea data-key="milestones" placeholder="Enter expected dates and milestones"></textarea></div>
+<div class="field"><label>Dependencies & Constraints</label><textarea data-key="constraints" placeholder="Access, permits, interfaces, or other constraints"></textarea></div></div>
+<div id="deliverables" class="view"><h3>Deliverables</h3><p class="muted" id="deliverIntro">Select a SOW Category on the Project SOW tab to display the appropriate form.</p><div id="deliverFields"></div></div>
+<div id="acceptance" class="view"><h3>Acceptance Criteria</h3><p class="muted" id="acceptIntro">Select a SOW Category on the Project SOW tab to display the appropriate form.</p><div id="acceptFields"></div></div>
+<div id="review" class="view"><h3>Review & Submit</h3><p class="muted">Review key information before submitting your SOW version.</p>
+<div class="field"><label>Release People *</label><input id="releasePerson" placeholder="Person responsible for releasing the SOW"></div>
+<div class="field"><label>Submission Notes</label><textarea data-key="notes" placeholder="Add review notes or revision rationale"></textarea></div>
+<div class="notice">Submit is a demo action. It records a local version history entry but does not notify Procurement or perform a real approval.</div>
+<h3 class="topgap">Submission Readiness</h3><div id="readiness" class="preview muted"></div>
+<button class="btn primary topgap" onclick="submitSOW()">Submit SOW</button></div>
+</section></div><p class="muted small topgap">Prototype only. Avoid entering confidential, personal, or commercial information into this publicly hosted demo.</p></main>
 <script>
-const key='fii-sow-studio-blank-v2';let extra={questions:[],revisions:[]};let current='overview';
-function page(id,btn){document.querySelectorAll('.view').forEach(el=>el.classList.add('hide'));document.getElementById(id).classList.remove('hide');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');current=id;document.getElementById('heading').textContent={overview:'Project Workspace',scope:'Scope of Work',deliverables:'Deliverables',acceptance:'Acceptance Criteria',clarifications:'Vendor Q&A',approval:'Review & Approval',history:'Revision History'}[id];render()}
-function collect(){let fields={};document.querySelectorAll('[data-key]').forEach(el=>fields[el.dataset.key]=el.type==='checkbox'?el.checked:el.value);return {fields,...extra}}
-function save(){localStorage.setItem(key,JSON.stringify(collect()));alert('Draft saved in this browser.')}
-function load(){try{let d=JSON.parse(localStorage.getItem(key));if(!d)return;extra={questions:d.questions||[],revisions:d.revisions||[]};document.querySelectorAll('[data-key]').forEach(el=>{if(d.fields&&Object.hasOwn(d.fields,el.dataset.key)){if(el.type==='checkbox')el.checked=d.fields[el.dataset.key];else el.value=d.fields[el.dataset.key]}})}catch(e){}render()}
-function addQuestion(){let vendor=document.getElementById('vendor').value.trim(),question=document.getElementById('question').value.trim();if(!vendor||!question){alert('Enter a vendor and a question.');return}extra.questions.push({vendor,category:document.getElementById('category').value,question,response:'',status:'Open'});document.getElementById('question').value='';save();render()}
-function respond(i){let response=prompt('Requesting team response:',extra.questions[i].response||'');if(response===null)return;extra.questions[i].response=response;extra.questions[i].status=response.trim()?'Answered':'Open';localStorage.setItem(key,JSON.stringify(collect()));render()}
-function revision(){let note=document.getElementById('revNote').value.trim();if(!note)return alert('Enter revision note.');extra.revisions.push({version:'R'+(extra.revisions.length+1),note,by:document.getElementById('revisedBy').value||'Team',date:new Date().toLocaleDateString()});document.getElementById('revNote').value='';save();render()}
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function render(){document.getElementById('qaList').innerHTML=extra.questions.length?extra.questions.map((q,i)=>'<div class="item"><b>'+esc(q.vendor)+' · '+esc(q.category)+' · '+esc(q.status)+'</b>'+esc(q.question)+'<p class="muted">'+esc(q.response||'Awaiting requesting-team response')+'</p><button class="btn" onclick="respond('+i+')">Respond</button></div>').join(''):'No questions yet.';document.getElementById('revisionList').innerHTML=extra.revisions.map(r=>'<div class="item"><b>'+esc(r.version)+' · '+esc(r.date)+'</b>'+esc(r.note)+' <span class="muted">— '+esc(r.by)+'</span></div>').join('')}
-function download(name,text,type){let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
-function exportData(){download('sow-demo.json',JSON.stringify(collect(),null,2),'application/json')}
-function downloadText(){let d=collect().fields;download('sow-draft.txt',Object.entries(d).map(([k,v])=>k.toUpperCase()+'\n'+v).join('\n\n'),'text/plain')}
-function reset(){if(confirm('Reset local demo data?')){localStorage.removeItem(key);location.reload()}}
+const STORAGE='fii-project-sow-v3';let history=[], answers={goods:{},services:{},construction:{}},submitted=false;
+const schemas={
+goods:{deliverIntro:'Goods — product quantities, specifications, documentation, and delivery requirements.',acceptIntro:'Goods — verify products against specifications and receiving requirements.',deliver:[
+['description','Item / Equipment Description','List each item, model, and applicable specification'],
+['quantity','Quantity & Unit of Measure','Required quantity and unit'],
+['datasheets','Technical Datasheets / Certifications','Required product data, certifications, manuals, warranty'],
+['delivery','Delivery Location & Packaging','Delivery site, packing, labeling, and logistics'],
+['spares','Spare Parts / Accessories','Required accessories, spare parts, or consumables']
+],accept:[
+['specs','Specification Compliance','How will product specifications be verified?'],
+['inspection','Incoming Inspection & Testing','What receiving inspection and test results are required?'],
+['quantity','Quantity / Damage Check','How will quantities and shipping damage be checked?'],
+['documents','Documentation & Warranty','What documentation and warranty must be accepted?'],
+['signoff','Receiving Acceptance & Sign-off','Who confirms acceptance and how?']
+]},
+services:{deliverIntro:'Services — activities, reports, service levels, and handover documentation.',acceptIntro:'Services — verify quality, outcomes, and SLA or milestone completion.',deliver:[
+['services','Service Activities & Outputs','What services and outputs must be provided?'],
+['reports','Reports / Documentation','Reporting frequency and required format'],
+['milestones','Service Milestones','Planned deliverables and due dates'],
+['sla','Service Levels / Response Times','Required service levels and measurable KPIs'],
+['handover','Knowledge Transfer / Handover','Training, records, or transition requirements']
+],accept:[
+['performance','Service Performance Criteria','How is satisfactory service performance measured?'],
+['quality','Quality / Accuracy Review','What are the review and error-correction standards?'],
+['sla','SLA / KPI Verification','How will response time and KPI compliance be verified?'],
+['rework','Issue Resolution & Rework','What must happen if deliverables fail review?'],
+['signoff','Owner Approval & Sign-off','Who approves the completed service?']
+]},
+construction:{deliverIntro:'Construction — drawings, permits, installation documentation, testing and closeout.',acceptIntro:'Construction — field inspection, safety/compliance, testing and closeout.',deliver:[
+['drawings','Drawings & As-Builts','Approved drawings, redlines, and final as-built format'],
+['permits','Permits & Inspections','Permits, inspection reports, and agency closeout records'],
+['materials','Material / Equipment Submittals','Product approvals, certifications and material records'],
+['tests','Testing & Commissioning','Test reports, commissioning records, punch list'],
+['closeout','Closeout Package','Warranty, O&M manuals, photos and turnover records']
+],accept:[
+['inspection','Field Inspection / Installation Quality','What installation inspections must pass?'],
+['compliance','Code, Permit & Safety Compliance','Which code, permit, safety and labor requirements apply?'],
+['tests','Testing & Commissioning Results','What tests must pass and what evidence is required?'],
+['punch','Punch List Closure','How are defects tracked and resolved?'],
+['signoff','Final Owner Acceptance','Who signs the final acceptance and required documentation?']
+]}};
+function el(id){return document.getElementById(id)}
+function escapeHTML(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]))}
+function textVal(k){let e=document.querySelector('[data-key="'+k+'"]');return e?e.value:''}
+function formData(){const fields={};document.querySelectorAll('[data-key]').forEach(e=>fields[e.dataset.key]=e.value);return{fields,answers,history,submitted,releasePerson:el('releasePerson').value}}
+function store(){localStorage.setItem(STORAGE,JSON.stringify(formData()))}
+function saveDraft(){submitted=false;store();refreshStatus();alert('Draft saved in this browser.')}
+function showPage(p){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===p));document.querySelectorAll('.menu button[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===p));if(p==='review')readiness()}
+function changeCategory(c){renderDynamic(c);store()}
+function renderDynamic(c){
+let s=schemas[c];el('deliverIntro').textContent=s?s.deliverIntro:'Select a SOW Category on the Project SOW tab to display the appropriate form.';
+el('acceptIntro').textContent=s?s.acceptIntro:'Select a SOW Category on the Project SOW tab to display the appropriate form.';
+for(const [section,root,fields] of [['deliver','deliverFields',s?.deliver],['accept','acceptFields',s?.accept]]){
+el(root).innerHTML=fields?fields.map(([key,label,hint])=>'<div class="field"><label>'+escapeHTML(label)+'</label><textarea data-dynamic="'+section+'" data-id="'+escapeHTML(key)+'" placeholder="'+escapeHTML(hint)+'">'+escapeHTML(answers[c]?.[section+'_'+key]||'')+'</textarea></div>').join(''):'<div class="empty">Choose Goods, Services or Construction to create category-specific questions.</div>';
+}}
+function captureDynamic(){const c=textVal('category');if(!c)return;answers[c]??={};document.querySelectorAll('[data-dynamic]').forEach(e=>answers[c][e.dataset.dynamic+'_'+e.dataset.id]=e.value)}
+document.addEventListener('input',e=>{if(e.target.matches('[data-dynamic]'))captureDynamic(); if(e.target.matches('[data-key],#releasePerson,[data-dynamic]')){submitted=false;refreshStatus()}});
+function renderHistory(){el('releaseRows').innerHTML=history.length?history.map(r=>'<tr><td>'+escapeHTML(r.version)+'</td><td>'+escapeHTML(r.person)+'</td><td>'+escapeHTML(r.date)+'</td></tr>').join(''):'<tr><td colspan="3" class="muted">No released versions yet.</td></tr>'}
+function refreshStatus(){el('statusBadge').textContent=submitted?'Submitted':'Draft';el('statusBadge').className='status'+(submitted?' submitted':'')}
+function missing(){const required=[['projectName','Project Name'],['department','Requesting Department'],['owner','SOW Owner'],['category','SOW Category'],['scope','Work Description']];return required.filter(([k])=>!textVal(k).trim()).map(([,label])=>label).concat(!el('releasePerson').value.trim()?['Release People']:[])}
+function readiness(){let m=missing();el('readiness').textContent=m.length?'Required before Submit: '+m.join(', '):'All required fields completed. Ready to submit this version.'}
+function submitSOW(){captureDynamic();let m=missing();if(m.length){showPage('review');readiness();alert('Please complete: '+m.join(', '));return}
+history.push({version:'R'+(history.length+1),person:el('releasePerson').value.trim(),date:new Date().toLocaleDateString('en-US',{year:'numeric',month:'2-digit',day:'2-digit'})});submitted=true;store();renderHistory();refreshStatus();showPage('review');alert('Submitted locally as '+history[history.length-1].version+'. This demo does not send an approval request.')}
+function niceName(k){const names={projectName:'Project Name',projectId:'Project ID',department:'Requesting Department',owner:'SOW Owner',location:'Project Location',completionDate:'Target Completion Date',category:'SOW Category',background:'Background',objective:'Project Objective',scope:'Scope of Work',exclusions:'Scope Exclusions',milestones:'Schedule / Key Milestones',constraints:'Dependencies & Constraints',notes:'Submission Notes'};return names[k]||k}
+function docHTML(){captureDynamic();const d=formData(),c=d.fields.category,s=schemas[c];let rows=history.length?history.map(r=>'<tr><td>'+escapeHTML(r.version)+'</td><td>'+escapeHTML(r.person)+'</td><td>'+escapeHTML(r.date)+'</td></tr>').join(''):'<tr><td colspan="3">Draft — no released version</td></tr>';
+let out='<h1>Project Statement of Work</h1><h2>Release History</h2><table border="1" cellpadding="7" cellspacing="0" width="100%"><tr><th>Version</th><th>Release People</th><th>Date</th></tr>'+rows+'</table>';
+for(const [title,keys] of [['Project SOW',['projectName','projectId','department','owner','location','completionDate','category','background','objective']],['Scope of Work',['scope','exclusions','milestones','constraints']]]){out+='<h2>'+title+'</h2>';for(const k of keys)out+='<p><b>'+niceName(k)+':</b> '+escapeHTML(d.fields[k]||'—').replace(/\n/g,'<br>')+'</p>'}
+for(const [name,items,prefix] of [['Deliverables',s?.deliver,'deliver'],['Acceptance Criteria',s?.accept,'accept']]){out+='<h2>'+name+'</h2>';if(items)for(const [k,label] of items)out+='<p><b>'+escapeHTML(label)+':</b> '+escapeHTML(d.answers[c]?.[prefix+'_'+k]||'—').replace(/\n/g,'<br>')+'</p>';}
+out+='<h2>Submission Notes</h2><p>'+escapeHTML(d.fields.notes||'—').replace(/\n/g,'<br>')+'</p>';
+return '<!doctype html><html><head><meta charset="utf-8"><title>Project SOW</title><style>body{font:12pt Arial;color:#243850;margin:35px}h1,h2{color:#0a2f60}h2{font-size:17pt;border-bottom:1px solid #ddd;padding-bottom:6px;margin-top:25px}p{line-height:1.5}table{border-collapse:collapse}td,th{border:1px solid #ccd5e0;padding:8px;text-align:left}</style></head><body>'+out+'</body></html>'}
+function filename(ext){return(textVal('projectName').trim()||'Project_SOW').replace(/[^A-Za-z0-9_-]+/g,'_')+'.'+ext}
+function download(name,content,type){let url=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)}
+function exportWord(){download(filename('doc'),docHTML(),'application/msword');}
+function exportPDF(){let w=window.open('','_blank');if(!w){alert('Please allow pop-ups to export a PDF.');return}w.document.open();w.document.write(docHTML());w.document.close();w.focus();setTimeout(()=>w.print(),500)}
+function load(){try{let d=JSON.parse(localStorage.getItem(STORAGE));if(d){history=d.history||[];answers=d.answers||answers;submitted=!!d.submitted;document.querySelectorAll('[data-key]').forEach(e=>{if(d.fields?.[e.dataset.key]!==undefined)e.value=d.fields[e.dataset.key]});el('releasePerson').value=d.releasePerson||''}}catch(e){}renderDynamic(textVal('category'));renderHistory();refreshStatus()}
 load();
 </script></body></html>
