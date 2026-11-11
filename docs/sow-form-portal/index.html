@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create SOW forms, look up SOW numbers, and view applications.">
+  <title>SOW Form Portal | FII Work</title>
+  <link rel="stylesheet" href="portal.css">
+  <script src="portal.js" defer></script>
+</head>
+<body>
+  <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="document" viewBox="0 0 24 24"><path d="M13 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10z"/><path d="M13 3v7h7M8 14h8m-8 3h5"/></symbol>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m16 16 4 4"/></symbol>
+    <symbol id="files" viewBox="0 0 24 24"><rect x="6" y="3" width="13" height="15" rx="2"/><path d="M3 7v12a2 2 0 0 0 2 2h11M9.5 8h6m-6 4h6"/></symbol>
+    <symbol id="approval" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="16" rx="2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></symbol>
+    <symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="frame header-inner">
+      <a class="brand" href="#lookup" aria-label="SOW Form Portal home">
+        <span class="brand-icon"><svg class="icon" aria-hidden="true"><use href="#document"/></svg></span>
+        <span><strong>FII Work</strong><small>SOW Form Portal</small></span>
+      </a>
+      <nav class="header-actions" aria-label="Main navigation">
+        <a id="show-query" class="header-query" href="#lookup" aria-current="page">Search Forms</a>
+        <a id="show-create" class="button button-primary" href="#new-form">
+          <svg class="icon" aria-hidden="true"><use href="#plus"/></svg>New Form
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="frame" id="query-view">
+    <section class="intro" aria-labelledby="portal-title">
+      <div class="intro-content">
+        <h1 id="portal-title">SOW Form Portal</h1>
+        <p>Create SOW forms and track submissions and approvals.</p>
+      </div>
+      <div class="intro-art" aria-hidden="true">
+        <div class="art-sheet art-back"></div>
+        <div class="art-sheet art-front"><svg class="icon"><use href="#document"/></svg><span></span><span></span></div>
+        <div class="art-search"><svg class="icon"><use href="#search"/></svg></div>
+      </div>
+    </section>
+
+    <section class="workspace" aria-labelledby="query-heading">
+      <div class="section-heading"><h2 id="query-heading">Search Forms</h2><span class="data-label">Demo Mode</span></div>
+
+      <nav class="query-nav" aria-label="Form views">
+        <a id="nav-my" class="query-link" href="#my-applications" data-panel="my-applications">
+          <span class="tab-icon"><svg class="icon" aria-hidden="true"><use href="#files"/></svg></span>
+          <span><strong>My Application</strong><small>Your submissions</small></span>
+        </a>
+        <a id="nav-lookup" class="query-link" href="#lookup" data-panel="lookup" aria-current="location">
+          <span class="tab-icon"><svg class="icon" aria-hidden="true"><use href="#search"/></svg></span>
+          <span><strong>SOW Number Lookup</strong><small>Search by SOW number</small></span>
+        </a>
+        <a id="nav-approval" class="query-link" href="#approval-applications" data-panel="approval-applications">
+          <span class="tab-icon"><svg class="icon" aria-hidden="true"><use href="#approval"/></svg></span>
+          <span><strong>Approval Application</strong><small>Awaiting your review</small></span>
+        </a>
+      </nav>
+
+      <section class="panel" id="lookup" aria-labelledby="lookup-title">
+        <h3 id="lookup-title">SOW Number Lookup</h3>
+        <p class="panel-description">Enter the full SOW number to view the form and its review status.</p>
+        <form id="search-form">
+          <label for="sow-number">SOW Number</label>
+          <div class="search-row">
+            <div class="search-input">
+              <svg class="icon" aria-hidden="true"><use href="#search"/></svg>
+              <input id="sow-number" name="sow-number" type="text" placeholder="e.g. SOW-20261110-001" required maxlength="80" autocomplete="off" spellcheck="false">
+            </div>
+            <button class="button button-primary search-button" type="submit">Search</button>
+          </div>
+        </form>
+        <button class="sample-button" id="sample-search" type="button">Try example SOW-20261110-001 <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+        <p id="search-feedback" class="feedback" role="status"></p>
+        <div id="search-results" class="records" hidden></div>
+      </section>
+
+      <section class="panel" id="my-applications" aria-labelledby="my-title" hidden>
+        <h3 id="my-title">My Application</h3>
+        <p class="panel-description">View the SOW forms you submitted and check their status.</p>
+        <div id="my-records" class="records"></div>
+      </section>
+
+      <section class="panel" id="approval-applications" aria-labelledby="approval-title" hidden>
+        <h3 id="approval-title">Approval Application</h3>
+        <p class="panel-description">View the SOW forms assigned to you and check their current review stage.</p>
+        <div id="approval-records" class="records"></div>
+      </section>
+
+      <p class="data-note"><svg class="icon" aria-hidden="true"><use href="#info"/></svg>This area shows sample records. To see versions you submitted on this site, open Version History under New Form.</p>
+    </section>
+  </main>
+
+  <main class="form-view" id="new-form" aria-label="New Form" hidden>
+    <iframe id="project-sow" title="Project SOW Form" data-src="./project-sow.html"></iframe>
+  </main>
+
+  <dialog id="record-dialog" aria-labelledby="detail-title">
+    <div class="dialog-heading">
+      <div><p id="detail-number"></p><h2 id="detail-title"></h2></div>
+      <form method="dialog"><button class="icon-button" aria-label="Close form details"><svg class="icon" aria-hidden="true"><use href="#close"/></svg></button></form>
+    </div>
+    <dl class="detail-list">
+      <div><dt>Status</dt><dd id="detail-status"></dd></div>
+      <div><dt>Applicant</dt><dd id="detail-owner"></dd></div>
+      <div><dt>Submitted On</dt><dd id="detail-date"></dd></div>
+      <div><dt>Review Stage</dt><dd id="detail-stage"></dd></div>
+    </dl>
+    <p class="dialog-note">Sample record</p>
+  </dialog>
+</body>
+</html>
